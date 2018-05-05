@@ -5,12 +5,12 @@ var query;
 // 多个query可以用\n连接  如 query='apple\norange\nbanana\npear'
 var from = 'zh';
 var to = 'en';
-var str1;//= appid + query + salt + key;
-var sign;// = MD5(str1);
+var str1; //= appid + query + salt + key;
+var sign; // = MD5(str1);
 
 var request = null; //异步请求
 
-$('#transte').click(
+$('#transte').on('click',
     function (event) {
         query = $('#srctext').val();
         if (!query) {
@@ -24,7 +24,7 @@ $('#transte').click(
     }
 )
 
-$('#transte').click(
+$('#transte').on('click',
     function () {
         request = $.ajax({
             url: 'http://api.fanyi.baidu.com/api/trans/vip/translate',
@@ -42,32 +42,27 @@ $('#transte').click(
                 var result = data.trans_result;
                 if (result) {
                     var r = result[0].dst;
-                    $('#srcResulttext').val(r);
-                    console.log(r);
+                    $("#srcResulttext").val(r);
+                    console.log("输出：" + r);
                 }
-                    
+
             }
         });
     }
 )
-/**
- * 复制到剪贴板
- */
-var clipboard = new Clipboard("#copy");
-clipboard.on('success',function(e){
-    alert("复制成功！");
-});
 
 /**
  * 清除按钮
  */
-$('#clear1').click(function(){
-	$('#srctext').val('');
-});
-$('#clear2').click(function(){
-	$('#srcResulttext').val('');
-});
-$('#clear3').click(function(){
-	$('#srctext').val('');
-	$('#srcResulttext').val('');
-});
+$('#clear').on('click', function () {
+    $('#srctext').val('');
+    $('#srcResulttext').val('');
+})
+
+/**
+ * 复制到剪贴板
+ */
+var clipboard = new Clipboard("#copy");
+clipboard.on('success', function (e) {
+    alert("复制成功！");
+})
