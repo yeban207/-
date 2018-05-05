@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<title>自己的翻译</title>
+		<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="dist/clipboard.min.js"></script>
+		<link rel="shortcut icon" href="favicon.icon" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+
+	<body>
+		<div class="body1">
+			<div>
+				<h1 class="title">中文翻译为英文</h1>
+				<hr>
+				<p class="title">技术来自服务来自百度</p>
+				<br>
+			</div>
+			<div class="box">
+				<div class="textBox">
+					<textarea id="srctext" cols="45" rows="20"></textarea>
+				</div>
+				<div class="buttonBox">
+					<input class="btn" id="transte" type="button" value="翻译">
+					<input class="btn" id="copy" type="button" value="复制剪贴板" data-clipboard-target="#srcResulttext">
+					<div class="clear">
+						<input class="btn" id="clear1" type="button" value="&lt;&lt;清除">
+						<input class="btn" id="clear2" type="button" value="清除&gt;&gt;">
+					</div>
+					<input class="btn" id="clear3" type="button" value="&lt;&lt;清除&gt;&gt;">
+				</div>
+				<div class="textResultBox">
+					<textarea id="srcResulttext" cols="45" rows="20"></textarea>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/fun.js"></script>
+</html>
